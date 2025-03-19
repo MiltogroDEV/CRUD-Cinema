@@ -74,13 +74,13 @@ body{
 /* -------------------------------- */
 
 #usefulButtons{
-    padding: 2vw;
+    padding: 10px;
     position: fixed;
     top: 2vw;
-    left: 2vw;
-    width: 2vw;
+    right: 2vw;
     border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    background-color: #DCDFE4;
 }
 
 .usefulButton{
