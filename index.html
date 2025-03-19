@@ -24,7 +24,7 @@
                             
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="simple-tab-0" data-bs-toggle="tab" href="#simple-/sala/update" role="tab" aria-controls="simple-/sala/update" aria-selected="true">Update</a>
+                                    <a class="nav-link active disabledFlag" id="simple-tab-0" data-bs-toggle="tab" href="#simple-/sala/update" role="tab" aria-controls="simple-/sala/update" aria-selected="true">Update</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link" id="simple-tab-1" data-bs-toggle="tab" href="#simple-/sala/save" role="tab" aria-controls="simple-/sala/save" aria-selected="false">Save</a>
@@ -36,8 +36,8 @@
                                     <a class="nav-link" id="simple-tab-3" data-bs-toggle="tab" href="#simple-/sala/findAll" role="tab" aria-controls="simple-/sala/findAll" aria-selected="false">FindAll</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="simple-tab-3" data-bs-toggle="tab" href="#simple-/sala/deleteById" role="tab" aria-controls="simple-/sala/deleteById" aria-selected="false">DeleteById</a>
-                                </li>
+                                    <a class="nav-link disabledFlag" id="simple-tab-3" data-bs-toggle="tab" href="#simple-/sala/deleteById" role="tab" aria-controls="simple-/sala/deleteById" aria-selected="false">DeleteById</a>
+                                </li>        
                             </ul>
                             <div class="tab-content pt-5" id="tab-content">
                                 
@@ -523,7 +523,8 @@
         </div>
 
         <div id="usefulButtons">
-            <img class="usefulButton" src="/src/erase.png" alt="">
+            <img class="usefulButton" id="erase" src="/src/erase.png" alt=""><br><br>
+            <img class="usefulButton" id="eye" src="/src/eye.png" alt="">
         </div>
         
         <div id="messageBox" class="" role="alert">
@@ -541,7 +542,7 @@
                 document.getElementById(id).style.display = 'block';
             }
         </script>
-        <script src="/script/admin.js" type="module"></script>
+        <script src="/script/admin.js"></script>
         <script src="/script/sala.js" type="module"></script>
         <script src="/script/ingresso.js" type="module"></script>
         <script src="/script/filme.js" type="module"></script>
