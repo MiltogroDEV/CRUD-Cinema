@@ -2,8 +2,6 @@ import { apiCall } from "./components/apiCall.js";
 import { showMessage } from "./components/showMessage.js";
 
 async function filmeAtualizar(e){
-    console.log("ENTROU FILMEATUALIZAR")
-    let attempt;
     e.preventDefault();
 
     const id = document.getElementById("/filmes/atualizar/id");
@@ -11,8 +9,6 @@ async function filmeAtualizar(e){
     const genero = document.getElementById("/filmes/atualizar/genero");
     const duracao = document.getElementById("/filmes/atualizar/duracao");
     const nome = document.getElementById("/filmes/atualizar/nome");
-
-    console.log("SINOPSE VALUE : " + sinopse.value)
 
     const data = {
         "sinopse": `${sinopse.value}`,
