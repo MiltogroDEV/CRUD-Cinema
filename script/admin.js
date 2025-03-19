@@ -1,15 +1,3 @@
-import { apiCall } from "./components/apiCall.js";
-import { showMessage } from "./components/showMessage.js";
-
-// -------- Get
-// const userSession = JSON.parse(localStorage.getItem("userSession"));
-// -------- Delete
-// localStorage.removeItem("userSession");
-// -------- Update
-// userSession.email = clienteEmail.value;
-// userSession.nome = clienteNome.value;
-// localStorage.setItem("userSession", JSON.stringify(userSession));
-
 function mostrarSecao(id) {
     document.querySelectorAll('.main5').forEach(secao => {
         secao.style.display = 'none';
@@ -17,6 +5,25 @@ function mostrarSecao(id) {
     document.getElementById(id).style.display = 'block';
 }
 
-// setInterval(() => {
-//     showMessage("s", "Cuida");
-// }, 4000);
+const usefulButtonErase = document.getElementById("erase");
+usefulButtonErase.addEventListener("click", () => {
+    console.clear()
+});
+
+let bool = false;
+const usefulButtonEye = document.getElementById("eye");
+usefulButtonEye.addEventListener("click", () => {
+    bool = !bool;
+    
+    if (!bool) {
+        document.querySelectorAll(".disabledFlag").forEach(rota => {
+            rota.classList.add("disabled");
+            usefulButtonEye.src = "/src/eyee.png";
+        });
+    } else {
+        document.querySelectorAll(".disabled").forEach(rota => {
+            rota.classList.remove("disabled");
+            usefulButtonEye.src = "/src/eye.png";
+        });
+    }
+});
