@@ -29,7 +29,7 @@ function showMessage(type, message) {
                 messageBox.style.opacity = opacity;
             }
         }, 50);
-    }, 3000);
+    }, 2000);
 }
 
 export { showMessage };
