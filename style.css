@@ -57,7 +57,7 @@ body{
 
 /* -------------------------------- */
 
-#messageBox {
+#messageBox{
     display: none; 
     padding: 20px;
     position: fixed;
@@ -69,4 +69,21 @@ body{
     text-align: center;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* -------------------------------- */
+
+#usefulButtons{
+    padding: 2vw;
+    position: fixed;
+    top: 2vw;
+    left: 2vw;
+    width: 2vw;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.usefulButton{
+    width: 20px;
+    height: 20px;
 }
