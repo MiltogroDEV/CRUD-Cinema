@@ -1,19 +1,18 @@
 import { apiCall } from "./components/apiCall.js";
 import { showMessage } from "./components/showMessage.js";
 
-async function salaUpdate(e){
+async function ingressoUpdate(e){
     let attempt;
     e.preventDefault();
 
-    const id = document.getElementById("/sala/Update/id");
+    const id = document.getElementById("/ingresso/update/id");
 
     const data = {
-        "id": `${id.value}`,
+        // "id": `${id.value}`,
     }
 
     try{
-        // attempt = await apiCall(`/sala/Update/${id.value}`, "DELETE");
-        attempt = await apiCall(`/sala/Update/${id.value}`, "DELETE", data);
+        attempt = await apiCall(`/ingresso/update/${id.value}`, "PUT", data);
         
         if(attempt.success){
             showMessage("s", `Dados no Console`);
@@ -29,5 +28,5 @@ async function salaUpdate(e){
     }
 }
 
-const salaUpdateBtn = document.getElementById("salaUpdateBtn");
-salaUpdateBtn.addEventListener("click", salaUpdate);
+const ingressoUpdateBtn = document.getElementById("ingressoUpdateBtn");
+ingressoUpdateBtn.addEventListener("click", ingressoUpdate);
