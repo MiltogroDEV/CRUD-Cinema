@@ -2,17 +2,20 @@ import { apiCall } from "./components/apiCall.js";
 import { showMessage } from "./components/showMessage.js";
 
 async function filmeAtualizar(e){
+    console.log("ENTROU FILMEATUALIZAR")
     let attempt;
     e.preventDefault();
 
     const id = document.getElementById("/filmes/atualizar/id");
-    const sipnose = document.getElementById("/filmes/atualizar/sipnose");
+    const sinopse = document.getElementById("/filmes/atualizar/sinopse");
     const genero = document.getElementById("/filmes/atualizar/genero");
     const duracao = document.getElementById("/filmes/atualizar/duracao");
     const nome = document.getElementById("/filmes/atualizar/nome");
 
+    console.log("SINOPSE VALUE : " + sinopse.value)
+
     const data = {
-        "sinopse": `${sipnose.value}`,
+        "sinopse": `${sinopse.value}`,
         "genero": `${genero.value}`,
         "duracao": `${duracao.value}:00`,
         "nome": `${nome.value}`
@@ -39,13 +42,13 @@ async function filmeCriar(e){
     let attempt;
     e.preventDefault();
 
-    const sipnose = document.getElementById("/filmes/criar/sinopse");
+    const sinopse = document.getElementById("/filmes/criar/sinopse");
     const genero = document.getElementById("/filmes/criar/genero");
     const duracao = document.getElementById("/filmes/criar/duracao");
     const nome = document.getElementById("/filmes/criar/nome");
 
     const data = {
-        "sinopse": `${sipnose.value}`,
+        "sinopse": `${sinopse.value}`,
         "genero": `${genero.value}`,
         "duracao": `${duracao.value}:00`,
         "nome": `${nome.value}`
