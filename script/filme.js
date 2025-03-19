@@ -39,7 +39,7 @@ async function filmeCriar(e){
     let attempt;
     e.preventDefault();
 
-    const sipnose = document.getElementById("/filmes/criar/sipnose");
+    const sipnose = document.getElementById("/filmes/criar/sinopse");
     const genero = document.getElementById("/filmes/criar/genero");
     const duracao = document.getElementById("/filmes/criar/duracao");
     const nome = document.getElementById("/filmes/criar/nome");
@@ -52,9 +52,7 @@ async function filmeCriar(e){
     }
     
     try{
-        console.log("Entrou")
         attempt = await apiCall(`/filmes/criar`, "POST", data);
-        console.log("Saiu")
         
         if(attempt.success){
             showMessage("s", `Dados no Console`);

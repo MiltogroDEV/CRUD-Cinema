@@ -20,7 +20,7 @@ async function sessaoSave(e){
     }
     
     try{
-        attempt = await apiCall(`/sessao/save`, "POST");
+        attempt = await apiCall(`/sessao/save`, "POST", data);
         
         if(attempt.success){
             showMessage("s", `Dados no Console`);
