@@ -64,7 +64,7 @@ async function sessaoDelete(e){
     e.preventDefault();
 
     const id = document.getElementById("/sessao/delete/id");
-    
+
     try{
         attempt = await apiCall(`/sessao/${id.value}`, "DELETE");
         
