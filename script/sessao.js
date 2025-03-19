@@ -1,35 +1,116 @@
 import { apiCall } from "./components/apiCall.js";
 import { showMessage } from "./components/showMessage.js";
 
-const userSession = JSON.parse(localStorage.getItem("userSession"));
+async function sessaoSave(e){
+    let attempt;
+    e.preventDefault();
 
-// -------- Get
-// const userSession = JSON.parse(localStorage.getItem("userSession"));
-// -------- Delete
-// localStorage.removeItem("userSession");
-// -------- Update
-// userSession.email = clienteEmail.value;
-// userSession.nome = clienteNome.value;
-// localStorage.setItem("userSession", JSON.stringify(userSession));
+    const numeroSala = document.getElementById("/sessao/save/numeroSala");
+    const idFilme = document.getElementById("/sessao/save/idFilme");
+    const cadeiras = document.getElementById("/sessao/save/cadeiras");
+    const horario = document.getElementById("/sessao/save/horario");
+    const idSala = document.getElementById("/sessao/save/idSala");
 
-async function carregarSessoes() {
-    try {
-        const sessoes = await apiCall("/sessao/todasSessao", "GET");
-
-        const container = document.getElementById("sessoesContainer");
-        container.innerHTML = "";
-
-        sessoes.forEach(sessao => {
-            const button = document.createElement("button");
-            button.className = "btn btn-primary";
-            button.type = "button";
-            button.textContent = `Sessão ${sessao.id}`;
+    const data = {
+        "numeroDaSala": `${numeroSala.value}`,
+        "idFilme": `${idFilme.value}`,
+        "cadeirasDisponiveis": `${cadeiras.value}`,
+        "horario": `${horario.value}:00`,
+        "idSala": `${idSala.value}`
+    }
+    
+    try{
+        attempt = await apiCall(`/sessao/save`, "POST");
+        
+        if(attempt.success){
+            showMessage("s", `Dados no Console`);
+            console.log(attempt.success);
             
-            container.appendChild(button);
-        });
-    } catch (error) {
-        console.error("Erro ao carregar sessões:", error);
+        } else if (attempt.error) {
+            showMessage("e", `Dados no Console`);
+            console.log(attempt.error);
+            
+        }
+    } catch (e){
+        console.log(e);
     }
 }
 
-document.addEventListener("DOMContentLoaded", carregarSessoes);
+async function sessaoGet(e){
+    let attempt;
+    e.preventDefault();
+
+    const id = document.getElementById("/sessao/get/id");
+    
+    try{
+        attempt = await apiCall(`/sessao/${id.value}`, "GET");
+        
+        if(attempt.success){
+            showMessage("s", `Dados no Console`);
+            console.log(attempt.success);
+            
+        } else if (attempt.error) {
+            showMessage("e", `Dados no Console`);
+            console.log(attempt.error);
+            
+        }
+    } catch (e){
+        console.log(e);
+    }
+}
+
+async function sessaoDelete(e){
+    let attempt;
+    e.preventDefault();
+
+    const id = document.getElementById("/sessao/delete/id");
+    
+    try{
+        attempt = await apiCall(`/sessao/${id.value}`, "DELETE");
+        
+        if(attempt.success){
+            showMessage("s", `Dados no Console`);
+            console.log(attempt.success);
+            
+        } else if (attempt.error) {
+            showMessage("e", `Dados no Console`);
+            console.log(attempt.error);
+            
+        }
+    } catch (e){
+        console.log(e);
+    }
+}
+
+async function sessaoTodasSessao(e){
+    let attempt;
+    e.preventDefault();
+
+    try{
+        attempt = await apiCall(`/sessao/todasSessao`, "GET");
+        
+        if(attempt.success){
+            showMessage("s", `Dados no Console`);
+            console.log(attempt.success);
+            
+        } else if (attempt.error) {
+            showMessage("e", `Dados no Console`);
+            console.log(attempt.error);
+            
+        }
+    } catch (e){
+        console.log(e);
+    }
+}
+
+const sessaoSaveBtn = document.getElementById("sessaoSaveBtn");
+sessaoSaveBtn.addEventListener("click", sessaoSave);
+
+const sessaoGetBtn = document.getElementById("sessaoGetBtn");
+sessaoGetBtn.addEventListener("click", sessaoGet);
+
+const sessaoDeleteBtn = document.getElementById("sessaoDeleteBtn");
+sessaoDeleteBtn.addEventListener("click", sessaoDelete);
+
+const sessaoTodasSessaoBtn = document.getElementById("sessaoTodasSessaoBtn");
+sessaoTodasSessaoBtn.addEventListener("click", sessaoTodasSessao);
