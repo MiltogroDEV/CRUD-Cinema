@@ -16,6 +16,7 @@ async function sessaoSave(e){
         "idFilme": `${idFilme.value}`,
         "cadeirasDisponiveis": `${cadeiras.value}`,
         "horario": `${horario.value}:00`,
+        "status": true,
         "idSala": `${idSala.value}`
     }
     
