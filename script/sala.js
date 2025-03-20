@@ -6,14 +6,14 @@ async function salaUpdate(e){
     e.preventDefault();
 
     const id = document.getElementById("/sala/update/id");
-    const novoId = document.getElementById("/sala/update/id");
+    const novoId = document.getElementById("/sala/update/novoid");
 
     const data = {
         "numero": `${novoId.value}`,
     }
     
     try{
-        attempt = await apiCall(`/sala/update${id.value}`, "PUT", data);
+        attempt = await apiCall(`/sala/update/${id.value}`, "PUT", data);
         
         if(attempt.success){
             showMessage("s", `Dados no Console`);
