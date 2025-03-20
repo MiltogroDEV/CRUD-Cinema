@@ -11,7 +11,7 @@ async function clienteUpdate(e){
 
     const data = {
         "email": `${novoEmail.value}`,
-        "nome": `${novoNome.value}`,
+        "nome": `${novoNome.value}`
     }
 
     try{
