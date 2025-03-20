@@ -30,6 +30,9 @@ async function sessaoSave(e){
             showMessage("e", `Dados no Console`);
             console.log(attempt.error);
             
+        } else {
+            showMessage("w", `Dados no Console`);
+            console.log(attempt);
         }
     } catch (e){
         console.log(e);
@@ -41,7 +44,7 @@ async function sessaoGet(e){
     e.preventDefault();
 
     const id = document.getElementById("/sessao/get/id");
-    
+
     try{
         attempt = await apiCall(`/sessao/${id.value}`, "GET");
         
