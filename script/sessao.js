@@ -106,6 +106,27 @@ async function sessaoTodasSessao(e){
     }
 }
 
+async function sessaoSessoesCanceladas(e){
+    let attempt;
+    e.preventDefault();
+
+    try{
+        attempt = await apiCall(`/sessao/SessoesCaceladas`, "GET");
+        
+        if(attempt.success){
+            showMessage("s", `Dados no Console`);
+            console.log(attempt.success);
+            
+        } else if (attempt.error) {
+            showMessage("e", `Dados no Console`);
+            console.log(attempt.error);
+            
+        }
+    } catch (e){
+        console.log(e);
+    }
+}
+
 const sessaoSaveBtn = document.getElementById("sessaoSaveBtn");
 sessaoSaveBtn.addEventListener("click", sessaoSave);
 
@@ -117,3 +138,6 @@ sessaoDeleteBtn.addEventListener("click", sessaoDelete);
 
 const sessaoTodasSessaoBtn = document.getElementById("sessaoTodasSessaoBtn");
 sessaoTodasSessaoBtn.addEventListener("click", sessaoTodasSessao);
+
+const sessaoSessoesCanceladasBtn = document.getElementById("sessaoSessoesCanceladasBtn");
+sessaoSessoesCanceladasBtn.addEventListener("click", sessaoSessoesCanceladas);
