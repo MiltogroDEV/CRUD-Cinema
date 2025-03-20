@@ -15,15 +15,22 @@ const usefulButtonEye = document.getElementById("eye");
 usefulButtonEye.addEventListener("click", () => {
     bool = !bool;
     
-    if (!bool) {
+    if (bool) {
         document.querySelectorAll(".disabledFlag").forEach(rota => {
             rota.classList.add("disabled");
-            usefulButtonEye.src = "/src/eyee.png";
+            usefulButtonEye.src = "/src/eye.png";
         });
     } else {
         document.querySelectorAll(".disabled").forEach(rota => {
             rota.classList.remove("disabled");
-            usefulButtonEye.src = "/src/eye.png";
+            usefulButtonEye.src = "/src/eyee.png";
         });
     }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".disabledFlag").forEach(rota => {
+        rota.classList.add("disabled");
+    });
+    !bool;
 });
