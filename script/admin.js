@@ -10,7 +10,7 @@ usefulButtonErase.addEventListener("click", () => {
     console.clear()
 });
 
-let bool = false;
+let bool = true;
 const usefulButtonEye = document.getElementById("eye");
 usefulButtonEye.addEventListener("click", () => {
     bool = !bool;
