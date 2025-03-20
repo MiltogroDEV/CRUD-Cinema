@@ -2,31 +2,32 @@ import { apiCall } from "./components/apiCall.js";
 import { showMessage } from "./components/showMessage.js";
 
 async function ingressoUpdate(e){
-    let attempt;
+    let attempt1;
+    let attempt2;
     e.preventDefault();
 
     const id = document.getElementById("/ingresso/update/id");
     const cadeira = document.getElementById("/ingresso/update/cadeira");
     const valor = document.getElementById("/ingresso/update/valor");
     const idSessao = document.getElementById("/ingresso/update/idSessao");
+    const idCliente = document.getElementById("/ingresso/update/idCliente");
 
     const data = {
         "cadeira": `${cadeira.value}`,
         "valor": `${valor.value}`,
-        "idSessao": `${idSessao.value}`
+        "idSessao": `${idSessao.value}`,
+        "idCliente": `${idCliente.value}`
     }
 
     try{
-        attempt = await apiCall(`/ingresso/update/${id.value}`, "PUT", data);
-        
-        if(attempt.success){
+        // attempt = await apiCall(`/ingresso/update/${id.value}`, "PUT", data);
+
+        attempt1 = await apiCall(`/ingresso/save`, "POST", data);
+        attempt2 = await apiCall(`/ingresso/deleteById/${id.value}`, "DELETE");
+
+        if(attempt1.success && attempt2.success){
             showMessage("s", `Dados no Console`);
-            console.log(attempt.success);
-            
-        } else if (attempt.error) {
-            showMessage("e", `Dados no Console`);
-            console.log(attempt.error);
-            
+            console.log("Ingresso atualizado com sucesso! (Mudou de ID)");
         }
     } catch (e){
         console.log(e);
@@ -40,11 +41,13 @@ async function ingressoSave(e){
     const cadeira = document.getElementById("/ingresso/save/cadeira");
     const valor = document.getElementById("/ingresso/save/valor");
     const idSessao = document.getElementById("/ingresso/save/idSessao");
+    const idCliente = document.getElementById("/ingresso/save/idCliente");
 
     const data = {
         "cadeira": `${cadeira.value}`,
         "valor": `${valor.value}`,
-        "idSessao": `${idSessao.value}`
+        "idSessao": `${idSessao.value}`,
+        "idCliente": `${idCliente.value}`
     }
 
     try{
