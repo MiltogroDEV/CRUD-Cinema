@@ -17,6 +17,7 @@
                     <button onclick="mostrarSecao('filme')" class="nav-link" id="v-pills-filme-tab" data-bs-toggle="pill" data-bs-target="#v-pills-filme" type="button" role="tab" aria-controls="v-pills-filme" aria-selected="false">Filme</button>
                     <button onclick="mostrarSecao('cliente')" class="nav-link" id="v-pills-cliente-tab" data-bs-toggle="pill" data-bs-target="#v-pills-cliente" type="button" role="tab" aria-controls="v-pills-cliente" aria-selected="false">Cliente</button>
                     <button onclick="mostrarSecao('sessao')" class="nav-link" id="v-pills-sessao-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sessao" type="button" role="tab" aria-controls="v-pills-sessao" aria-selected="false">Sessao</button>
+                    <button onclick="mostrarSecao('info')" class="nav-link" id="v-pills-info-tab" data-bs-toggle="pill" data-bs-target="#v-pills-info" type="button" role="tab" aria-controls="v-pills-info" aria-selected="false">Info</button>
                 </div>
                 <div class="tab-content mt-2" id="v-pills-tabContent">
                     <!-- --------- SALA INICIO --------- -->
@@ -519,6 +520,76 @@
                     </div>
                     <!-- --------- SESSAO FIM --------- -->
 
+                    <!-- --------- INFO INICIO --------- -->
+                    <div id="info" class="main5">
+                        <div class="tab-pane fade" id="v-pills-info" role="tabpanel" aria-labelledby="v-pills-info-tab" tabindex="0">
+                            
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" id="simple-tab-0" data-bs-toggle="tab" href="#simple-/info/filmeMaisVendido" role="tab" aria-controls="simple-/info/filmeMaisVendido" aria-selected="true">Filme Mais Vendido</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="simple-tab-1" data-bs-toggle="tab" href="#simple-/info/sessoesIngressosDisponiveis" role="tab" aria-controls="simple-/info/sessoesIngressosDisponiveis" aria-selected="false">Sessoes Ingressos Disponiveis</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="simple-tab-2" data-bs-toggle="tab" href="#simple-/info/ingressosPorSessao" role="tab" aria-controls="simple-/info/ingressosPorSessao (delete)" aria-selected="false">Ingressos Por Sessao</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="simple-tab-3" data-bs-toggle="tab" href="#simple-/info/filmeReceita" role="tab" aria-controls="simple-/info/filmeReceita" aria-selected="false">Filme Receita</a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content pt-5" id="tab-content">
+                                
+                                <!-- --------- FILMEMAISVENDIDO INICIO --------- -->
+                                <div class="tab-pane active" id="simple-/info/filmeMaisVendido" role="tabpanel" aria-labelledby="simple-tab-0">
+                                    <form class="was-validated">
+                                        <div class="mb-3">
+                                            <label for="validationDefault01" class="form-label">Inicio</label>
+                                            <input type="date" class="form-control is-invalid" id="/info/filmeMaisVendido/inicio" required />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="validationDefault01" class="form-label">Fim</label>
+                                            <input type="date" class="form-control is-invalid" id="/info/filmeMaisVendido/fim" required />
+                                        </div>
+                                        <button type="button" class="btn btn-outline-default" id="infoFilmeMaisVendidoBtn">Go</button>
+                                    </form>
+                                </div>
+                                <!-- --------- FILMEMAISVENDIDO FIM --------- -->
+
+                                <!-- --------- SESSOESINGRESSOSDISPONIVEIS INICIO --------- -->
+                                <div class="tab-pane" id="simple-/info/sessoesIngressosDisponiveis" role="tabpanel" aria-labelledby="simple-tab-1">
+                                    <form class="was-validated">
+                                        <button type="button" class="btn btn-outline-default" id="infoSessoesIngressosDisponiveisBtn">Go</button>
+                                    </form>
+                                </div>
+                                <!-- --------- SESSOESINGRESSOSDISPONIVEIS FIM --------- -->
+
+                                <!-- --------- INGRESSOSPORSESSAO INICIO --------- -->
+                                <div class="tab-pane" id="simple-/info/ingressosPorSessao" role="tabpanel" aria-labelledby="simple-tab-2">
+                                    <form class="was-validated">
+                                        <div class="mb-3">
+                                            <label for="validationDefault06" class="form-label">Id</label>
+                                            <input type="number" class="form-control is-invalid" id="/info/ingressosPorSessao/id" required />
+                                        </div>
+                                        <button type="button" class="btn btn-outline-default" id="infoIngressosPorSessaoBtn">Go</button>
+                                    </form>
+                                </div> 
+                                <!-- --------- INGRESSOSPORSESSAO FIM --------- -->
+
+                                <!-- --------- FILMERECEITA INICIO --------- -->
+                                <div class="tab-pane" id="simple-/info/filmeReceita" role="tabpanel" aria-labelledby="simple-tab-3">
+                                    <form class="was-validated">
+                                        <button type="button" class="btn btn-outline-default" id="infoFilmeReceitaBtn">Go</button>
+                                    </form>
+                                </div>
+                                <!-- --------- FILMERECEITA FIM --------- -->
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- --------- INFO FIM --------- -->
+
                 </div>
             </div>
         </div>
@@ -544,6 +615,7 @@
             }
         </script>
         <script src="/script/admin.js"></script>
+        <script src="/script/info.js" type="module"></script>
         <script src="/script/sala.js" type="module"></script>
         <script src="/script/ingresso.js" type="module"></script>
         <script src="/script/filme.js" type="module"></script>
