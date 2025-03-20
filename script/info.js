@@ -8,14 +8,6 @@ async function infoFilmeMaisVendido(e){
     const inicio = document.getElementById("/info/filmeMaisVendido/inicio");
     const fim = document.getElementById("/info/filmeMaisVendido/fim");
 
-    // const [diaInicio, mesInicio, anoInicio] = inicio.value.split("-");
-    // const [diaFim, mesFim, anoFim] = fim.value.split("-");
-
-    // const data = {
-    //     "inicio": `${anoInicio}-${mesInicio}-${diaInicio}`,
-    //     "fim": `${anoFim}-${mesFim}-${diaFim}`
-    // }
-
     const data = {
         "inicio": `${inicio.value}`,
         "fim": `${fim.value}`
