@@ -36,8 +36,6 @@ async function infoSessoesIngressosDisponiveis(e){
     let attempt;
     e.preventDefault();
 
-    // const id = document.getElementById("");
-
     try{
         attempt = await apiCall(`/info/sessao/sessoesIngressosDisponiveis`, "GET");
         
