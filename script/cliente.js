@@ -18,10 +18,12 @@ async function clienteUpdate(e){
         attempt = await apiCall(`/clientes/update/${id.value}`, "PUT", data);
 
         if(attempt.success){
-            showMessage("s", `${attempt.success}`);
-
+            showMessage("s", `Dados no Console`);
+            console.log(attempt.success);
+            
         } else if (attempt.error) {
-            showMessage("e", `${attempt.error}`);
+            showMessage("e", `Dados no Console`);
+            console.log(attempt.error);
 
         }
     } catch (e){
@@ -45,11 +47,12 @@ async function clienteSave(e){
         attempt = await apiCall("/clientes/save", "POST", data);
         
         if(attempt.success){
-            showMessage("s", `Conta ${nome.value} criada`);
+            showMessage("s", `Dados no Console`);
+            console.log(attempt.success);
             
         } else if (attempt.error) {
-            showMessage("e", `Erro ao criar conta`);
-            
+            showMessage("e", `Dados no Console`);
+            console.log(attempt.error);
         }
     } catch (e){
         console.log(e);
