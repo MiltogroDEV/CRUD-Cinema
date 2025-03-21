@@ -21,12 +21,12 @@ A API utiliza **PostgreSQL** como banco de dados. Certifique-se de que o Postgre
 ### 1️⃣ Clonar o Repositório do FronEnd
 
 ```bash
-git clone https://github.com/MiltogroDEV/CRUD-Cinema
+git clone https://github.com/MiltogroDEV/CRUD-Cinema/
 ```
 
 ### 2️⃣ Clonar o Repositório do BackEnd
-``` bash
-https://github.com/LairesPereira/cinema-bdii/
+```bash
+git clone https://github.com/LairesPereira/cinema-bdii/
 ```
 *Apenas colaboradores como você que está vendo, podem ter acesso a ambos os repositórios.*
 
