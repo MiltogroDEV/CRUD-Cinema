@@ -24,13 +24,13 @@ A API utiliza **PostgreSQL** como banco de dados. Certifique-se de que o Postgre
 git clone https://github.com/MiltogroDEV/CRUD-Cinema
 ```
 
-### 3️⃣ Clonar o Repositório do BackEnd
+### 2️⃣ Clonar o Repositório do BackEnd
 ``` bash
 https://github.com/LairesPereira/cinema-bdii/
 ```
 *Apenas colaboradores como você que está vendo, podem ter acesso a ambos os repositórios.*
 
-### 2️⃣ Configuração do Banco de Dados e finalização
+### 3️⃣ Configuração do Banco de Dados e finalização
 Primeiramente, na sua interface de Banco de Dados crie um banco chamado cinema;
 Em **src/main/resources/application.properties altere** os dados :
 ``` properties
